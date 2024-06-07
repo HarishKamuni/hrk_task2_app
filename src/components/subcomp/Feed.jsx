@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { users } from '../../data';
-import likeImg from '../../assets/like.png';
-import planLike from '../../assets/planlike.png';
+import dil from '../../images/heart.svg';
 import heartImg from '../../assets/heart.png';
 import blankheart from '../../assets/blankheart.png';
 import { CiMenuKebab } from 'react-icons/ci';
@@ -31,6 +30,7 @@ const Feed = ({ posts }) => {
               alt="Not found"
               className="postProfileImg w-[40px] h-[40px] bg-contain rounded-md"
             />
+
             <div className="flex flex-col">
               <span className="postUserName font-semibold">
                 {users.map((n) => n.name)}
@@ -45,12 +45,22 @@ const Feed = ({ posts }) => {
           </div>
         </div>
         <div className="postCenter">
-          <span className="postCenterText text-sm ">{posts.desc}</span>
-          <img
-            src={posts.photo}
-            alt="photo"
-            className="postCenterImg mt-5 w-full rounded-md"
-          />
+          <span className="postCenterText text-sm">{posts.desc}</span>
+          <span className="relative">
+            <img
+              src={posts.photo}
+              alt="photo"
+              className="postCenterImg mt-5 w-full rounded-md "
+            />
+            <span className="absolute top-16 right-6">
+              <img
+                src={dil}
+                width={25}
+                alt="blankheart"
+                className="bg-transparent"
+              />
+            </span>
+          </span>
         </div>
         <div className="postBottom mt-8 ">
           <div className="postBottomLeft flex gap-5">
