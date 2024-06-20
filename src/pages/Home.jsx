@@ -13,7 +13,8 @@ const Home = () => {
         <Sidebar />
         <Main />
       </div>
-      <div className="flex justify-center items-center mt-6">
+
+      <div className="flex justify-start items-center mt-6 mx-4 overflow-x-scroll">
         {posts.map((item) => (
           <BottomComp posts={item} />
         ))}
